@@ -1,0 +1,17 @@
+.triangle{
+    /* width: 0; */
+    /* 没有 width 也没事？ */
+    /* height: 0; */
+    /* 没有height 也没事？ */
+    /* border-width: 100px; */
+    border-width: 200px;
+    border-style: solid;
+    /* transparent属性用来指定全透明色彩  */
+    /* 为什么是三角形啊 好离谱 */
+    /* 就是给上下左右边框设置颜色 不一样 造成的  */
+    /* border-color: transparent #0099CC transparent transparent; */
+    border-color: pink #0099CC transparent transparent;
+    /* transform: rotate(90deg); 顺时针旋转90° */
+    /* 不旋转也没事 */
+}
+

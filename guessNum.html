@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="styleSheet" href="css/shape.css" />
+</head>
+
+<body>
+    <input id="numLittle">数字小</input>
+    <input id="numBig">数字上限</input>
+    <input id="guess">猜测是</input>
+    <!-- js 获取 input 的值 -->
+    <button id="btnStart">开始</button>
+    <button id="btnGuess">猜测</button>
+    <div id="show">显示</div>
+    <script>
+
+        // https://www.runoob.com/w3cnote/js-random.html
+        //生成从minNum到maxNum的随机数
+        function randomNum (minNum, maxNum) {
+            switch (arguments.length) {
+                case 1:
+                    return parseInt(Math.random() * minNum + 1, 10);
+                    break;
+                case 2:
+                    return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+        }
+
+
+
+        let btnStart = document.getElementById('btnStart');
+        let btnGuess = document.getElementById('btnGuess');
+        let guessDom = document.getElementById('guess');
+        let showDom = document.getElementById('show');
+        let num 
+        
+        btnStart.onclick = () => {
+            start()
+        }
+        btnGuess.onclick = () => {
+            console.log("guess");
+            guess()
+        }
+
+        function guess () {
+            console.log("guessDom.value");
+            console.log(guessDom.value);
+            console.log("num");
+            console.log(num);
+            // https://www.cnblogs.com/www1842564021/p/11830139.html
+            if(guessDom.value===num){
+                console.log("innerText");
+                // showDom.value="猜对了"
+                // js document 赋值
+                showDom.innerText="猜对了"
+                return
+            }
+           if( guessDom.value>num){
+               console.log("猜小了");
+               alert("猜小了")
+               return
+           }
+        }
+        
+        function start () {
+            let numLittle = document.getElementById('numLittle').value;
+            let numBig = document.getElementById('numBig').value;
+           
+            
+            console.log("numLittle");
+            console.log(numLittle);
+            // randomNum(numLittle,numBig)
+
+             num = randomNum(numLittle, numBig)
+            //   记录下来 数组 按钮 显示
+            // 数组 用的  学过 的解析 
+            // 箭头函数 let 
+            console.log("num");
+            console.log(num);
+            guessDom.value
+        }
+
+
+    </script>
+</body>
+
+</html>

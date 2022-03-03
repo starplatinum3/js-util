@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        width: 100%;
+        position: relative;
+    }
+ 
+    .left {
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: rgb(139, 214, 78);
+        text-align: center;
+        line-height: 150px;
+        font-size: 20px;
+    }
+ 
+    .right {
+        overflow: hidden;
+        /* 没有这句话的话 他们之间没有约束  他们就会互相覆盖呀啥的 */
+        /* 有了这句话 他们就比较保守 不能交融了 男女授受不亲 */
+        /* 这句话 让他变成 bdc了吗 */
+        height: 300px;
+        background: rgb(170, 54, 236);
+        text-align: center;
+        line-height: 300px;
+        font-size: 40px;
+    }
+</style>
+<body>
+    <div class="left">LEFT</div>
+    <div class="right">RIGHT</div>
+
+    <!-- https://blog.csdn.net/sinat_36422236/article/details/88763187 -->
+</body>
+</html>
