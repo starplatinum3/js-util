@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>React App</title>
+</head>
+<style>
+                .container{
+            display: grid;
+            width: 100%;
+            grid-template-rows: 100px;  /*设置行高*/
+            /* 左中右 三个列 */
+            grid-template-columns: 100px auto 200px;  /*设置列数属性*/
+        }
+        /* https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid-template-columns */
+        .left{
+            background: red;
+        }
+        .main{
+            background: blue;
+        }
+        .right{
+            background:red;
+        }
+</style>
+<body>
+    <div class="container">
+        <div class="left">left</div>
+        <div class="main">center</div>
+        <div class="right">right</div>
+    </div>
+</body>
+
+<!-- https://blog.csdn.net/weixin_44135121/article/details/91430443 -->
+</html>
+<!-- https://blog.csdn.net/ganyingxie123456/article/details/77054124 -->
