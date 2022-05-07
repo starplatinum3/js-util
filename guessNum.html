@@ -8,23 +8,40 @@
 </head>
 
 <body>
-    <input id="numLittle">数字小</input>
-    <input id="numBig">数字上限</input>
-    <input id="guess">猜测是</input>
+    <h1>猜数游戏</h1>
+    <h2>请输入一个0-99之间的随机整数：</h2>
+    <!-- 数字下限 <input id="numLittle"></input>
+    数字上限 <input id="numBig"></input> -->
+    猜测是 <input id="guess"></input>
     <!-- js 获取 input 的值 -->
-    <button id="btnStart">开始</button>
-    <button id="btnGuess">猜测</button>
-    <div id="show">显示</div>
+    <!-- <button id="btnStart">开始</button> -->
+     <button id="btnGuess">猜测</button>
+     <div> 结果 
+         <!-- <div id="show">显示</div> -->
+     <sapn id="show"></sapn> 
+    </div>
+    
+    当前还可以猜测次数: <span id="canGuessCnt"></span>
     <script>
 
         // https://www.runoob.com/w3cnote/js-random.html
         //生成从minNum到maxNum的随机数
-        function randomNum (minNum, maxNum) {
+        function randomNum(minNum, maxNum) {
+            console.log("minNum");
+            console.log(minNum);
+            console.log("maxNum");
+            console.log(maxNum);
             switch (arguments.length) {
+
+                // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random
                 case 1:
+                    //  0--1)*1 +1 
+                    // 1--2
                     return parseInt(Math.random() * minNum + 1, 10);
                     break;
                 case 2:
+                    //  0--1)* (3-2 +1)+2
+                    // 0--2)+2 ==2---4)
                     return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
                     break;
                 default:
@@ -35,58 +52,108 @@
 
 
 
-        let btnStart = document.getElementById('btnStart');
+        // let btnStart = document.getElementById('btnStart');
         let btnGuess = document.getElementById('btnGuess');
         let guessDom = document.getElementById('guess');
         let showDom = document.getElementById('show');
-        let num 
+        let canGuessCnt = document.getElementById('canGuessCnt');
         
-        btnStart.onclick = () => {
-            start()
-        }
+        let num
+
+        // btnStart.onclick = () => {
+        //     start()
+        // }
         btnGuess.onclick = () => {
             console.log("guess");
             guess()
         }
 
-        function guess () {
+        function domValAdd(dom,val){
+            // let domVal=parseInt (dom.value)
+            let domVal=parseInt (dom.innerText)
+            // dom.value=domVal+val
+            console.log("domVal");
+            console.log(domVal);
+            let nowVal=domVal+val
+            console.log("nowVal");
+            console.log(nowVal);
+            dom.innerText=nowVal
+        }
+
+        function guess() {
             console.log("guessDom.value");
             console.log(guessDom.value);
             console.log("num");
             console.log(num);
+            // canGuessCnt.value
+            // console.log("canGuessCnt.value");
+            // console.log(canGuessCnt.value);
+            let canGuessCntVal=parseInt (canGuessCnt.innerText)
+            // input 有value 
+            // div 没有
+            console.log(canGuessCntVal);
+            if(canGuessCntVal<=0){
+                alert("不能猜了")
+                return
+            }
+            domValAdd(canGuessCnt,-1)
             // https://www.cnblogs.com/www1842564021/p/11830139.html
-            if(guessDom.value===num){
+            // 他需要是个 str 
+            if (guessDom.value === num + "") {
                 console.log("innerText");
                 // showDom.value="猜对了"
                 // js document 赋值
-                showDom.innerText="猜对了"
+                let tip = "猜对了"
+                showDom.innerText = "猜对了"
+                // alert(tip)
                 return
             }
-           if( guessDom.value>num){
-               console.log("猜小了");
-               alert("猜小了")
-               return
-           }
+            if (guessDom.value > num) {
+                let tip = "猜大了"
+                console.log("猜大了");
+                //    alert("猜大了")
+                showDom.innerText = tip
+                return
+            }
+            if (guessDom.value < num) {
+                let tip = "猜小了"
+                console.log("猜小了");
+                //    alert("猜小了")
+                showDom.innerText = tip
+                return
+            }
         }
-        
-        function start () {
-            let numLittle = document.getElementById('numLittle').value;
-            let numBig = document.getElementById('numBig').value;
-           
-            
-            console.log("numLittle");
-            console.log(numLittle);
+
+        function start() {
+            // let numLittle = document.getElementById('numLittle').value;
+            // let numBig = document.getElementById('numBig').value;
+
+
+            // console.log("numLittle");
+            // console.log(numLittle);
             // randomNum(numLittle,numBig)
 
-             num = randomNum(numLittle, numBig)
+            // guessDom.value =10
+            // canGuessCnt.value =10
+            canGuessCnt.innerText=10
+            // .val 没有用处 
+            let numLittleInt=0
+            let numBigInt=99
+            num = randomNum(numLittleInt, numBigInt)
+            // 不parse 不行
+            // num = randomNum(parseInt(numLittle), parseInt(numBig))
             //   记录下来 数组 按钮 显示
             // 数组 用的  学过 的解析 
             // 箭头函数 let 
             console.log("num");
             console.log(num);
-            guessDom.value
+            // guessDom.value
         }
 
+        window.onload=()=>{
+            start()
+
+        }
 
     </script>
 </body>

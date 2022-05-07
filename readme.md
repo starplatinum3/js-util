@@ -13,3 +13,5 @@ https://acc15t4bm5.feishu.cn/docs/doccnPB4cHSkxZevwLNXbNc6Uog#
 
 2022年3月3日09:52:57
 guessNum.html
+
+cnpm install node-fetch -S
