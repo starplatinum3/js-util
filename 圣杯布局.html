@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>React App</title>
+</head>
+<style>
+           /* 两边定宽，中间自适用 */
+           body,html,.container{
+            height: 100%;
+            padding:0;
+            margin: 0;
+        }
+        .col{
+            float: left;   /* 三个col都设置float: left,为了把left和right定位到左右部分 */
+            position:relative;
+        }
+         /*父元素空出左右栏位子: 因为上一步中，左右栏定位成功了，但是中间栏的内容会被遮盖住*/
+        .container{
+            padding:0 200px 0 100px;
+        }
+        /*左边栏*/
+        .left{
+            /* left:-100px; */
+            /* 在最左边  */
+            /* left:-200px; */
+            left:-50px;
+            /* 往右边去了点  */
+            /* 就是往左的程度不够 但是也就是他实际上在右边 */
+            /* 为什么不是 fl left吗 */
+            width: 100px;
+            height:100%;
+            /* margin-left: -100%; */
+            /* margin-left: -50%; */
+            /* 去中间了 */
+            margin-left: -0%;
+            /* 去下面了 */
+            /* 也就是他本来是块状的 在下面 */
+            /* 他是块状的吗。。为什么会跑到上面去 */
+            background: #ff69b4;
+        }
+        /*中间栏*/
+        .main{
+            width:100%;
+            height: 100%;
+            background: #659;
+        }
+        /*右边栏*/
+        .right{
+            right:-200px;
+            width:200px;
+            height:100%;
+            margin-left: -200px;
+            background: #ff69b4;
+        }
+</style>
+<body>
+    <div class="container">
+        <div class="main col">Main</div>
+        <div class="left col">Left</div>
+        <div class="right col">Right</div>
+    </div>
+</body>
+
+<!-- https://blog.csdn.net/weixin_44135121/article/details/91430443 -->
+</html>
