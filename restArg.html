@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        function restArgTest(...args) {
+            console.log("args");
+            console.log(args);
+        }
+
+        function argThenRestArgTest(clearArg1,...restArgs) {
+            console.log("clearArg1");
+            console.log(clearArg1);
+            console.log("restArgs");
+            console.log(restArgs);
+        }
+// /clearArg1
+// restArg.html:21 1
+// restArg.html:22 restArgs
+// restArg.html:23 
+// (3) [2, 3, 4]
+// 0: 2
+// 1: 3
+// 2: 4
+// length: 3
+        restArgTest(1,2,33,4)
+        argThenRestArgTest(1,2,3,4)
+        // 输出
+//         args
+// restArg.html:16 
+// Array(4)
+// 0: 1
+// 1: 2
+// 2: 33
+// 3: 4
+// length: 4
+        // function test(...arg1, ) {} //语法Error: parameter after rest parameter
+        // (...arg1, ) => {} //语法Error: expected closing parenthesis, got ','
+    </script>
+
+</body>
+
+</html>

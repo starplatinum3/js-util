@@ -6,6 +6,30 @@
     <title>React App</title>
 </head>
 <style>
+    /* ⽅案2 */
+    .wrap {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background: rgb(81, 37, 182);
+    }
+
+    .center {
+        background: rgb(210, 27, 27);
+        /* position: absulote; */
+        position: absolute;
+        /* left: 50%; */
+        /* 只是他的话 就是在中间了 */
+        /* 那直接  left: 25%; 可以吗 */
+        /* 往左边了 还需要 translateX吗 */
+        /* transform: translateX(-50%); */
+
+        left: 25%;
+        /* 也不对 那是 1/4 右边的和他重合了 */
+        width: 300px;
+        height: 300px;
+    }
+
     .container {
         display: grid;
         width: 100%;
@@ -31,25 +55,12 @@
 </style>
 
 <body>
-    <div class="container">
-        <div class="left">left</div>
+    <div class="wrap">
+        <div class="center"></div>
+        <!-- <div class="left">left</div>
         <div class="main">center</div>
-        <div class="right">right</div>
+        <div class="right">right</div> -->
     </div>
-
-    <script>
-        console.log(typeof typeof typeof null)
-        // string
-
-    //    let  res=  'abcdcba'.replace(/c/g, h);
-       let  res=  'abcdcba'.replace(/c/g, "h");
-       console.log("res");
-       console.log(res);
-
-       let  res2=  'abcdCba'.replace(/c/g, "h");
-       console.log("res2");
-       console.log(res2);
-    </script>
 </body>
 
 <!-- https://blog.csdn.net/weixin_44135121/article/details/91430443 -->
