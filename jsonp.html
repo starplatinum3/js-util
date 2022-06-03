@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JSONP 实例</title>
+</head>
+
+<body>
+    <div id="divCustomers"></div>
+    <script type="text/javascript">
+        function callbackFunction(result, methodName) {
+            var html = '<ul>';
+            for (var i = 0; i < result.length; i++) {
+                html += '<li>' + result[i] + '</li>';
+            }
+            html += '</ul>';
+            document.getElementById('divCustomers').innerHTML = html;
+        }
+    </script>
+    <!-- https://www.runoob.com/json/json-jsonp.html -->
+    <script type="text/javascript" src="https://www.runoob.com/try/ajax/jsonp.php?jsoncallback=callbackFunction">
+        // 他的意思是说 调用了之后 返回的 callbackFunction(["customername1","customername2"])。会在这个标签里面，然后就可以跑代码了
+    </script>
+</body>
+
+</html>
