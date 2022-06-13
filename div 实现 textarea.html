@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 输入框 */
+    .dzm-textarea {
+      padding: 5px;
+      border: 1px solid red;
+    }
+    /* 输入框为空时显示 placeholder */
+    .dzm-textarea:empty:before {
+      content: attr(placeholder);
+      color: red;
+    }
+    /* 输入框获取焦点时移除 placeholder */
+    .dzm-textarea:focus:before {
+      content: none;
+    }
+
+    /* https://juejin.cn/post/7033224792291409934 */
+  </style>
+</head>
+<body>
+  <!-- textarea -->
+  <div class="dzm-textarea" contenteditable="true" placeholder="请输入内容" style="resize: both; overflow: auto;"></div>
+</body>
+</html>

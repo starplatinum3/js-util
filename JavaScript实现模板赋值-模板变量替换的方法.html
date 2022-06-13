@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>React App</title>
+</head>
+
+<body>
+
+
+    <div id="results"></div>
+
+
+    <!-- https://blog.csdn.net/snsHL9db69ccu1aIKl9r/article/details/122355738 -->
+    <script id="category" type="text/template">
+    <li>
+      <h3>名称:#{name}</h3>
+      <p>描述:#{description}</p>
+
+      <h3>名称:#{name}</h3>
+      <p>描述:#{description.one}</p>
+      <p>描述:#{description.two}</p>
+
+      <!-- splitedNames
+ ['description', 'one'] -->
+    </li>
+  </script>
+
+    <script>
+        const render = (id, data) => {
+            // https://www.runoob.com/jsref/jsref-reduce.html
+            const template = document.getElementById(id).innerHTML
+            const div = document.createElement('div')
+            // array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+            // 
+            // const get = (o, p) => p.split('.').reduce((tot, currentValue) => {
+            //     // o && o[k]
+            //     return   tot && tot[currentValue],tot
+            // })
+            // 失效了
+            // 是返回了两个 还是返回了o。。。 
+            // const get = (o, p) => p.split('.').reduce((o, k) => o && o[k], o)
+            // const get = (data, name) => name.split('.').reduce((total, currentValue) => total && total[currentValue], data)
+            const get = (data, name) => {
+                let splitedNames = name.split('.')
+                console.log("============");
+                console.log("splitedNames");
+                console.log(splitedNames);
+                //     splitedNames
+                //  ['name']
+                // 为什么要用点 分开呢  什么情况有点呢
+                // name.split('.').reduce((total, currentValue) => total && total[currentValue], data)
+                // return  splitedNames.reduce((total, currentValue) => {
+                // //   return  total && total[currentValue], data
+                //   total && total[currentValue], data
+                // })
+                console.log("data");
+                console.log(data);
+                // data 
+                //  {
+                //     "name": "fly63前端网",
+                //     "description": "网站地址：https://www.fly63.com"
+                // }
+                let getRes = splitedNames.reduce((total, currentValue) => {
+                    //   return  total && total[currentValue], data
+                    console.log("................");
+                    console.log("total");
+                    console.log(total);
+                    // 对于实体的所有属性吗
+                    console.log("currentValue");
+                    console.log(currentValue);
+                    if (total) {
+                        return total[currentValue]
+                    }
+                    // return  total && total[currentValue]
+                }, data)
+                console.log("getRes of reduce");
+                console.log(getRes);
+                return getRes
+                // return splitedNames.reduce((total, currentValue) => total && total[currentValue], data)
+            }
+            // https://zhidao.baidu.com/question/694090432157640364.html
+            // 完全 [\s\S]*是完全通配的意思；
+            // 所有# 开头的
+            div.innerHTML = template.replace(/#{([\s\S]*?)}/g, (originStr, groupStr) => {
+                console.log("originStr");
+                console.log(originStr);
+                let trimedName = groupStr.trim()
+                // get(data, name.trim())
+                console.log("trimedName");
+                console.log(trimedName);
+                // JavaScript实现模板赋值-模板变量替换的方法.html:43 trimedName
+                // JavaScript实现模板赋值-模板变量替换的方法.html:44 name
+                // JavaScript实现模板赋值-模板变量替换的方法.html:43 trimedName
+                // JavaScript实现模板赋值-模板变量替换的方法.html:44 description
+                let getRes = get(data, trimedName)
+                console.log("getRes");
+                console.log(getRes);
+                return getRes
+                //                 getRes
+                // JavaScript网站地址：https://www.fly63.com
+            })
+            return div;
+        }
+        const results = document.querySelector('#results')
+        let data = [{ name: 'fly63前端网', description: '网站地址：https://www.fly63.com' }]
+        data.forEach(item => {
+            results.appendChild(render('category', item))
+        })
+    </script>
+
+</body>
+
+<!-- https://blog.csdn.net/weixin_44135121/article/details/91430443 -->
+
+</html>
+<!-- https://blog.csdn.net/ganyingxie123456/article/details/77054124 -->
