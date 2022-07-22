@@ -15,3 +15,7 @@ https://acc15t4bm5.feishu.cn/docs/doccnPB4cHSkxZevwLNXbNc6Uog#
 guessNum.html
 
 cnpm install node-fetch -S
+
+git add .
+git commit -m "1"
+git push origin master 
