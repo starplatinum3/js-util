@@ -19,3 +19,7 @@ git commit -m "D:\proj\js\js-util\getImgs.js"
 git push origin master
 
 cnpm install node-fetch -S
+
+git add .
+git commit -m "1"
+git push origin master 
