@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>React App</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <!-- <img> -->
+    <!-- <img src=""/> -->
+    <button id="downloadBtn">downloadBtn</button>
+</body>
+
+<script>
+    let downloadBtn = document.getElementById("downloadBtn")
+
+    downloadBtn.onclick = function () {
+        //     var a=document.createElement('a');
+        // a.download="test.png";
+        // let  url="https://media-public.canva.cn/ziloI/MAEvTjziloI/2/s.png"
+        let url = "https://media-public.canva.cn/ziloI/MAEvTjziloI/1/s.png"
+
+        // a.href=url;
+        // a.click();
+        downloadImg(url)
+    }
+
+    function downloadImg(url) {
+        var a = document.createElement('a');
+        a.download = "test.png";
+        // let  url="https://media-public.canva.cn/ziloI/MAEvTjziloI/2/s.png"
+        a.href = url;
+        a.click();
+    }
+</script>
+
+<!-- https://blog.csdn.net/weixin_44135121/article/details/91430443 -->
+
+</html>

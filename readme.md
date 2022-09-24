@@ -14,4 +14,8 @@ https://acc15t4bm5.feishu.cn/docs/doccnPB4cHSkxZevwLNXbNc6Uog#
 2022年3月3日09:52:57
 guessNum.html
 
+git add .
+git commit -m "D:\proj\js\js-util\getImgs.js"
+git push origin master
+
 cnpm install node-fetch -S

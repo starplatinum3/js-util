@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+        .content {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            position: relative;
+            line-height: 20px;
+            max-height: 40px;
+        }
+
+        .content:after {
+            content: "...";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding-right: 352px;
+            padding-left: 4px;
+            background: linear-gradient(to right, transparent, #fff 0%);
+        }
+
+        .more {
+            /* position: absolute;
+            bottom: 0;
+            right: 283px; */
+
+            color: #2522ff;
+          
+            z-index: 9;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p class="content">
+        如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。如果实现单行文本的溢出显示省略号同学们应该都知道用text-
+        <div class="more">查看全文</div>
+    </p>
+    <!-- 如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。 -->
+    <!-- https://blog.csdn.net/weixin_41535944/article/details/111310809 -->
+
+</body>
+
+</html>
