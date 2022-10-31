@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .donecir {
+            width: 50px;
+            height: 50px;
+            border: solid 3px #00bc9b;
+            float: left;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .indonecir {
+            width: 40px;
+            height: 40px;
+            border: solid 1px #00bc9b;
+            border-radius: 50%;
+            background-color: #00bc9b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .doneline {
+            width: 100px;
+            height: 3px;
+            float: left;
+            background-color: #00bc9b;
+            margin-bottom: 19px;
+        }
+
+        .line {
+            width: 100px;
+            height: 3px;
+            float: left;
+            background-color: #BCBCBC;
+            margin-bottom: 19px;
+        }
+
+        .cir {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .incir {
+            width: 40px;
+            height: 40px;
+            border: solid 1px #BCBCBC;
+            border-radius: 50%;
+            background-color: #BCBCBC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text {
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="area">
+            <div class="donecir">
+                <div class="indonecir" style="color: #fff">1</div>
+            </div>
+            <div class="text">第1步</div>
+        </div>
+        <div class="area">
+            <div class="doneline"></div>
+        </div>
+        <div class="area">
+            <div class="donecir">
+                <div class="indonecir" style="color: #fff">2</div>
+            </div>
+            <div class="text">第2步</div>
+        </div>
+        <div class="line"></div>
+        <div class="area">
+            <div class="cir">
+                <div class="incir" style="color: white;">3</div>
+            </div>
+            <div class="text">第3步</div>
+        </div>
+        <div class="line"></div>
+        <div class="area">
+            <div class="cir">
+                <div class="incir" style="color: white;">4</div>
+            </div>
+            <div class="text">第4步</div>
+        </div>
+    </div>
+</body>
+
+</html>
