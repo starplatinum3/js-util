@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- <script>
+        function func(){
+            return false;
+        }
+    </script> -->
+    <!-- https://blog.csdn.net/whd526/article/details/78178451 -->
+</head>
+<body>
+  <input id="inputDom"></input>
+    <form action="">
+        <input type="submit" value="button" onclick="return func()" /> 
+        <!--注意是onclick内是return func();而不是简单的调用func()函数-->
+    </form>
+
+    <script>
+      // https://www.nowcoder.com/discuss/782691
+     let  inputDom= document.getElementById("inputDom")
+      function func(){
+        console.log("inputDom.innerText");
+        console.log(inputDom.innerText);
+        // inputDom.innerText
+        let value= inputDom.value
+        console.log("value");
+        console.log(value);
+        if(value){
+          return true
+
+        }
+          return false;
+      }
+  </script>
+</body>
+</html>
