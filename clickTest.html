@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+    <title>自动搜索</title>
+    <style type="text/css">
+        .mouseOut {
+            background: #708090;
+            color: #FFFAFA;
+        }
+
+        .mouseOver {
+            background: #FFFAFA;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+            inner
+        </div>
+       </div>
+</body>
+
+</html>
+
+<!-- https://www.cnblogs.com/Hyacinth-Yuan/p/6715795.html -->
+<script>
+   var outer = document.querySelector('.outer');
+var inner = document.querySelector('.inner');
+
+function onClick() {
+ console.log('click');
+
+ setTimeout(function() {
+   console.log('timeout');
+ }, 0);
+
+ Promise.resolve().then(function() {
+   console.log('promise');
+ });
+
+ outer.setAttribute('data-random', Math.random());
+}
+// click
+// clickTest.html:43 promise
+// clickTest.html:36 click
+// clickTest.html:43 promise
+// 2clickTest.html:39 timeout
+inner.addEventListener('click', onClick);
+outer.addEventListener('click', onClick);
+</script>
