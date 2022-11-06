@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>java</title>
+</head>
+
+<body>
+   java  链表长度大于等于8时，就会转变成红黑树 。  使用链地址法（使用散列表） 使用2次扰动函数（hash函数）
+   来降低哈希冲突的概率，使得数据分布更平均；红黑树。动态获取信息以及动态调用对象。反射。
+   JVM：程序计数器 (Program Counter)，Java堆 (Heap)，Java虚拟机栈 (Stack)，本地方法栈 (Native Stack)，方法区 (Method Area)。方法区：存放已被加载的类信息、常量、静态变量、即时编译器编译后的代码数据。即永久代，在jdk1.8中不存在方法区了，被元数据区替代了，原方法区被分成两部分；1：加载的类信息，2：运行时常量池；加载的类信息被保存在元数据区中，运行时常量池保存在堆中；。
+   Volatile 有三大特性：保证可见性 不保证原子性 禁止指令重排.  MVCC实现. 
+   <a href="无锁.html"> 无锁、偏向锁、轻量级锁、重量级锁 。</a>
+   强引用、软引用 果内存空间不足了，就会回收这些对象的内存、引用队列（ReferenceQueue）。弱引用、虚引用。 Class.forName 。类的.class 方法。实例对象getClass()。接口 实现代理接口的匿名类，InvokeHandler处理。cglib asm 继承 。不要声明成final。 负载因子，0.75  扩容2倍  jdk1.7：分段锁Segment继承了ReentrantLock锁。1.8：volatile+Node+CAS+Synchronized 。怎么判断内存泄漏    Larrylock  map 崩了.常见的锁，如何使用    reent lock fina unlock  Sync  Obj。class notify. RSA： DSA： ECDSA：非对称   dealut. 对称加密算法有DES、3DES、AES、Blowfish、IDEA、RC5、RC6，常用的设计模式  adapter 建造 单例 工厂 抽象工厂 代理  观察者. 新生代 Serial、PraNew、Parallel Scavenge，老年代Serial Old、Parallel Old、CMS，还有用于回收整个Java堆的G1收集器。 新生代 GC（Minor GC）:指发生新生代的的垃圾收集动作，Minor GC 非常频繁，回收速度一般也比较快。老年代 GC（Major GC/Full GC）:指发生在老年代的 GC，出现了 Major GC 经常会伴随至少一次的 Minor。GC（并非绝对），Major GC 的速度一般会比 Minor GC 的慢 10 倍以上。有效的防止内存泄露.引用计数法:可达性分析法: RabbitMQ有以下几种工作模式 ： 简单模式：一个生产者，一个消费者 work模式：一个生产者，多个消费者，每个消费者获取到的消息唯一。 订阅模式：一个生产者发送的消息会被多个消费者获取。路由模式：发送消息到交换机并且要指定路由key ，消费者指定路由key将队列绑定到交换机topic模式：将路由键和某模式进行匹配，此时队列需要绑定在一个模式上RPC String，Stringbuffer，StringBuilder的区别String ：String类是一个不可变的类，一旦创建就不可以修改。String是final类，不能被继承String实现了equals()方法和hashCode()方法  StringBuffer：继承自AbstractStringBuilder，可变类。StringBuffer是线程安全的 可以通过append方法动态构造数据。StringBuilder：继承自AbstractStringBuilder，是可变类。StringBuilder是非线性安全的。执行效率比StringBuffer高。redis String：value可以是String也可以是数字。一般做一些复杂的计数功能的缓存。 Hash：field-value映射表，存储用户信息和商品信息 List：list分页查询 Set:实现差，并，交集操作，共同喜好 Sorted set：用户列表，礼物排行榜，弹幕消息 .  缓存雪崩： 缓存同一时间大面积失效，所有请求都落到数据库造成短时间内承受大量请求而崩掉.事发中：设置本地缓(ehcache)+限流(hystrix)，尽量避免我们的数据库***掉(起码能保证我们的服务还是能正常工作的) 延时双删策略. 8内存淘汰策略 volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰 volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰 volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰 allkeys-lru：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的key（这个是最常用的） allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰 no-eviction：禁止驱逐数据，也就是说当内存不足以容纳新写入数据时，新写入操作会报错。 volatile-lfu：从已设置过期时间的数据集(server.db[i].expires)中挑选最不经常使用的数据淘汰 allkeys-lfu：当内存不足以容纳新写入数据时，在键空间中，移除最不经常使用的key。 分布式结构,怎么保证数据一致性 。 规避分布式事务——业务整合。经典方案 - eBay 模式 。new Integer(123)每次都会创建一个新的对象； Integer.valueOf(123)会调用缓存池中的对象，多次调用会取得同一个对象的引用。可达性分析法:通过一系列的称为 “GC Roots” 的对象作为起点，从这些节点开始向下搜索，节点所走过的路径称为引用链，当一个对象到 GC Roots 没有任何引用链相连的话，则证明此对象是不可用的
+
+Java集合Map面试题，面试必问_hnjsjsac的博客-CSDN博客
+
+</body>
+
+</html>
